@@ -76,8 +76,39 @@ This project builds a complete **end-to-end Data Engineering & Visualization pip
 
 ---
 
-## 🚀 How to Run
+## 📤 Upload to AWS S3
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/Food-Delivery-Analytics-Dashboard.git
+import boto3
+
+# Initialize S3 client
+s3 = boto3.client('s3', aws_access_key_id='YOUR_ACCESS_KEY',
+                        aws_secret_access_key='YOUR_SECRET_KEY')
+
+# Upload the file
+s3.upload_file('cleaned_data.csv', 'your-bucket-name', 'cleaned_data/cleaned_data.csv')
+
+print("File uploaded to S3 successfully.")
+
+---
+
+## 🌐 Launch Dashboard using ngrok
+
+Step 1: Install pyngrok
+bash
+Copy
+Edit
+pip install pyngrok
+Step 2: Run ngrok tunnel
+python
+Copy
+Edit
+from pyngrok import ngrok
+
+# Open tunnel on port 8050 (Dash default)
+public_url = ngrok.connect(8050)
+print(f"Public URL: {public_url}")
+Step 3: Run your Dash app in another terminal
+bash
+Copy
+Edit
+python app.py

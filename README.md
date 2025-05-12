@@ -1,149 +1,83 @@
-# 🚀 Food Delivery Analytics Dashboard
+<!-- Project Banner -->
+<p align="center">
+  <img src="https://img.shields.io/badge/Big%20Data-PySpark-orange?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Cloud-AWS_S3-yellow?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Dashboard-Plotly_Dash-blue?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge" />
+</p>
 
-A real-time food delivery analytics dashboard built with **PySpark**, **AWS S3**, and **Plotly Dash**. This project demonstrates a scalable data pipeline from data ingestion to cloud storage and interactive visualization.
+<h1 align="center">📊 Food Delivery Analytics Dashboard</h1>
 
----
-
-## 📊 Project Overview
-
-This project processes a raw food delivery dataset using **Apache Spark**, stores the cleaned data on **AWS S3**, and visualizes insights through a professional **Plotly Dash dashboard** — all done interactively within **Google Colab**.
-
----
-
-## 🔧 Tech Stack
-
-- **PySpark** – ETL and data transformation  
-- **Google Colab** – Development environment  
-- **AWS S3** – Cloud storage for cleaned data  
-- **Plotly Dash** – Interactive dashboard in Python  
-- **ngrok** – Tunnel Colab apps to the public  
-- **Pandas / NumPy** – Data manipulation  
-- **GitHub** – Version control and deployment  
+<p align="center">
+  <em>A Big Data pipeline project that extracts, transforms, and visualizes real-world food delivery metrics using PySpark, AWS, and Dash.</em>
+</p>
 
 ---
 
-## 🛠️ Pipeline Architecture
+## 📚 Table of Contents
 
-```mermaid
-flowchart TD
-    A[Raw Dataset (CSV)] --> B[PySpark ETL in Google Colab]
-    B --> C[Cleaned DataFrame]
-    C --> D[Upload to AWS S3]
-    C --> E[Visualized via Plotly Dash]
-    D --> F[Cloud-Based Analytics Dashboard]
-```
-
----
-
-## ⚙️ Features
-
-- ✅ Real-time ETL processing using PySpark  
-- ✅ Data cleaning and transformation  
-- ✅ Upload cleaned data to AWS S3  
-- ✅ Build and run a Dash-based interactive dashboard  
-- ✅ Run everything from Google Colab  
-- ✅ GitHub-ready project structure  
+- [🔍 Project Overview](#-project-overview)
+- [📁 Dataset Information](#-dataset-information)
+- [🧰 Tech Stack](#-tech-stack)
+- [✨ Features](#-features)
+- [🚀 How to Run](#-how-to-run)
+- [📸 Dashboard Preview](#-dashboard-preview)
+- [📤 Upload to AWS S3](#-upload-to-aws-s3)
+- [🌐 Launch Dashboard using ngrok](#-launch-dashboard-using-ngrok)
+- [🧠 What I Learned](#-what-i-learned)
+- [🧑‍💻 Author](#-author)
+- [🔗 Connect with Me](#-connect-with-me)
 
 ---
 
-## 🚀 Setup Instructions
+## 🔍 Project Overview
 
-### 1. Clone the Repository
+This project builds a complete **end-to-end Data Engineering & Visualization pipeline** using a real-world food delivery dataset. It leverages **PySpark** for scalable processing, stores cleaned data on **AWS S3**, and builds a **dynamic interactive dashboard** using **Plotly Dash**.
 
-```bash
-git clone https://github.com/upen122/Food-Delivery-Analytics-Dashboard.git
-cd Food-Delivery-Analytics-Dashboard
-```
-
-### 2. Upload Your Raw Dataset
-
-Upload your `train.csv` into Google Colab or place it in the local directory for testing.
-
-### 3. Install Required Libraries (in Google Colab)
-
-```python
-!pip install pyspark pandas boto3 plotly dash pyngrok
-```
-
-### 4. Run the PySpark ETL Code
-
-- Load the CSV
-- Clean and transform using PySpark
-- Convert to Pandas DataFrame
-- Save as `cleaned_food_data.csv`
-
-### 5. Upload Cleaned Data to AWS S3
-
-Configure your AWS credentials in Colab:
-
-```python
-import boto3
-
-s3 = boto3.client(
-    's3',
-    aws_access_key_id="YOUR_ACCESS_KEY",
-    aws_secret_access_key="YOUR_SECRET_KEY"
-)
-
-s3.upload_file("cleaned_food_data.csv", "your-bucket-name", "cleaned_food_data.csv")
-```
-
-### 6. Launch Dashboard with ngrok
-
-```python
-!pip install pyngrok
-from pyngrok import ngrok
-public_url = ngrok.connect(8050)
-print("Dashboard URL:", public_url)
-```
+🎯 **Goal:** Derive operational insights to improve delivery performance, analyze delivery times, and understand the impact of weather, traffic, and festivals on customer experience.
 
 ---
 
-## 📁 Folder Structure
+## 📁 Dataset Information
 
-```
-📦 Food-Delivery-Analytics-Dashboard
-├── 📁 colab_notebooks
-│   └── ETL_and_Dashboard.ipynb
-├── 📁 data
-│   ├── raw
-│   └── processed
-├── 📁 dashboard
-│   └── app.py
-├── README.md
-└── requirements.txt
-```
+- 📦 Source: Kaggle Food Delivery Dataset  
+- 🎯 Contains attributes like:
+  - Delivery ratings, time, weather, traffic conditions
+  - Rider details (age, experience, vehicle condition)
+  - Festival and multi-order indicators
+  - City zones, restaurant, and delivery locations
 
 ---
 
-## 📸 Screenshots
+## 🧰 Tech Stack
 
-> *(Add screenshots of your dashboard here)*  
-> ![dashboard-screenshot](assets/dashboard-example.png)
-
----
-
-## 🧑‍💼 Author
-
-**Upen**  
-Data Engineering Enthusiast  
-[LinkedIn]([https://www.linkedin.com/in/your-profile](https://www.linkedin.com/in/upen-singh-546999341/)) | [GitHub](https://github.com/upen122)
+| Layer               | Technology             |
+|--------------------|------------------------|
+| Language           | Python 3.x             |
+| Big Data Processing| PySpark (Google Colab) |
+| Cloud Storage      | AWS S3 (via `boto3`)   |
+| Visualization      | Plotly Dash            |
+| Notebook           | Jupyter (Colab)        |
+| Version Control    | Git + GitHub           |
 
 ---
 
-## 📄 License
+## ✨ Features
 
-This project is licensed under the [MIT License](LICENSE).
+- ✅ **ETL Pipeline** using PySpark DataFrames
+- ✅ **Null & Duplicate Handling**, Data Cleaning, Type Casting
+- ✅ **AWS S3 Integration** for cloud storage of cleaned data
+- ✅ **Real-Time Dashboard** with interactive graphs
+- ✅ **Insights on**:
+  - Impact of Weather/Traffic
+  - Festival-time Delivery Trends
+  - Rider Ratings vs Delivery Timings
+  - Multi-order Effects
 
 ---
 
-## 💡 Future Enhancements
+## 🚀 How to Run
 
-- Add user login & authentication  
-- Deploy permanently on EC2 or Render  
-- Integrate real-time Kafka stream  
-- Add dashboard filters and charts by cuisine, location, etc.
-
----
-
-Feel free to ⭐ this repo if it helped you!
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/Food-Delivery-Analytics-Dashboard.git

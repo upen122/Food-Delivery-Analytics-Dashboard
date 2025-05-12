@@ -144,7 +144,7 @@ print("Dashboard URL:", public_url)
 ## 📸 Screenshots
 
 > *(Add screenshots of your dashboard here)*  
-> ![dashboard-screenshot](assets/dashboard-example.png)
+> ![dashboard-screenshot](assets/"C:\Users\upens\OneDrive\Pictures\Screenshots\Dashboard.png")
 
 ---
 
@@ -152,7 +152,7 @@ print("Dashboard URL:", public_url)
 
 **Upen**  
 Data Engineering Enthusiast  
-[LinkedIn](https://www.linkedin.com/in/your-profile) | [GitHub](https://github.com/upen122)
+[LinkedIn](linkedin.com/in/upen-singh-546999341/) | [GitHub](https://github.com/upen122)
 
 ---
 

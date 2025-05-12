@@ -1,114 +1,175 @@
-<!-- Project Banner -->
-<p align="center">
-  <img src="https://img.shields.io/badge/Big%20Data-PySpark-orange?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Cloud-AWS_S3-yellow?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Dashboard-Plotly_Dash-blue?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge" />
-</p>
+# 🚚 Food Delivery Analytics Dashboard – Big Data Pipeline Project
 
-<h1 align="center">📊 Food Delivery Analytics Dashboard</h1>
+![PySpark](https://img.shields.io/badge/PySpark-BigData-blue)
+![AWS](https://img.shields.io/badge/AWS-S3-orange)
+![Dash](https://img.shields.io/badge/Dashboard-Plotly-green)
+![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
 
-<p align="center">
-  <em>A Big Data pipeline project that extracts, transforms, and visualizes real-world food delivery metrics using PySpark, AWS, and Dash.</em>
-</p>
+## 📌 Overview
 
----
+This project presents a **Big Data Pipeline** designed to analyze food delivery data using **PySpark**, store clean datasets on **AWS S3**, and visualize insights through an **interactive dashboard** built with **Dash (Plotly)**.
 
-## 📚 Table of Contents
-
-- [🔍 Project Overview](#-project-overview)
-- [📁 Dataset Information](#-dataset-information)
-- [🧰 Tech Stack](#-tech-stack)
-- [✨ Features](#-features)
-- [🚀 How to Run](#-how-to-run)
-- [📸 Dashboard Preview](#-dashboard-preview)
-- [📤 Upload to AWS S3](#-upload-to-aws-s3)
-- [🌐 Launch Dashboard using ngrok](#-launch-dashboard-using-ngrok)
-- [🧠 What I Learned](#-what-i-learned)
-- [🧑‍💻 Author](#-author)
-- [🔗 Connect with Me](#-connect-with-me)
+The pipeline processes real-world delivery data with multiple features like weather, traffic, delivery time, and rider performance, offering meaningful analytics for decision-making.
 
 ---
 
-## 🔍 Project Overview
+## 📁 Dataset
 
-This project builds a complete **end-to-end Data Engineering & Visualization pipeline** using a real-world food delivery dataset. It leverages **PySpark** for scalable processing, stores cleaned data on **AWS S3**, and builds a **dynamic interactive dashboard** using **Plotly Dash**.
-
-🎯 **Goal:** Derive operational insights to improve delivery performance, analyze delivery times, and understand the impact of weather, traffic, and festivals on customer experience.
-
----
-
-## 📁 Dataset Information
-
-- 📦 Source: Kaggle Food Delivery Dataset  
-- 🎯 Contains attributes like:
-  - Delivery ratings, time, weather, traffic conditions
-  - Rider details (age, experience, vehicle condition)
-  - Festival and multi-order indicators
-  - City zones, restaurant, and delivery locations
+- Source: [Kaggle - Delivery Dataset](https://www.kaggle.com/)
+- Fields include:
+  - Delivery Person Age & Ratings
+  - Restaurant & Delivery Coordinates
+  - Traffic & Weather Conditions
+  - Festival Impact
+  - Time taken for delivery
+  - Multiple deliveries, Vehicle condition, City, and more
 
 ---
 
-## 🧰 Tech Stack
+## ⚙️ Technologies Used
 
-| Layer               | Technology             |
-|--------------------|------------------------|
-| Language           | Python 3.x             |
-| Big Data Processing| PySpark (Google Colab) |
-| Cloud Storage      | AWS S3 (via `boto3`)   |
-| Visualization      | Plotly Dash            |
-| Notebook           | Jupyter (Colab)        |
-| Version Control    | Git + GitHub           |
-
----
-
-## ✨ Features
-
-- ✅ **ETL Pipeline** using PySpark DataFrames
-- ✅ **Null & Duplicate Handling**, Data Cleaning, Type Casting
-- ✅ **AWS S3 Integration** for cloud storage of cleaned data
-- ✅ **Real-Time Dashboard** with interactive graphs
-- ✅ **Insights on**:
-  - Impact of Weather/Traffic
-  - Festival-time Delivery Trends
-  - Rider Ratings vs Delivery Timings
-  - Multi-order Effects
+| Layer | Tech Stack |
+|-------|------------|
+| Data Processing | `PySpark` on `Google Colab` |
+| Cloud Storage | `AWS S3` |
+| Visualization | `Dash` + `Plotly` |
+| Programming | `Python` |
+| Version Control | `Git` + `GitHub` |
 
 ---
 
-## 📤 Upload to AWS S3
+## 🛠️ Key Features
 
+- ✅ **Big Data Handling** using PySpark
+- ✅ **Data Cleaning & Transformation** (nulls, dtypes, outliers)
+- ✅ **Upload Cleaned Data to AWS S3**
+- ✅ **Interactive Dashboard** to explore:
+  - Delivery Time vs Ratings
+  - Traffic and Weather Conditions
+  - Festival Impacts
+  - Rider and City-based Analytics
+
+---
+
+## 🚀 How to Run
+
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/your-username/Food-Delivery-Analytics-Dashboard.git
+   cd Food-Delivery-Analytics-Dashboard
+
+---
+
+## ⚙️ Features
+
+- ✅ Real-time ETL processing using PySpark  
+- ✅ Data cleaning and transformation  
+- ✅ Upload cleaned data to AWS S3  
+- ✅ Build and run a Dash-based interactive dashboard  
+- ✅ Run everything from Google Colab  
+- ✅ GitHub-ready project structure  
+
+---
+
+## 🚀 Setup Instructions
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/upen122/Food-Delivery-Analytics-Dashboard.git
+cd Food-Delivery-Analytics-Dashboard
+```
+
+### 2. Upload Your Raw Dataset
+
+Upload your `train.csv` into Google Colab or place it in the local directory for testing.
+
+### 3. Install Required Libraries (in Google Colab)
+
+```python
+!pip install pyspark pandas boto3 plotly dash pyngrok
+```
+
+### 4. Run the PySpark ETL Code
+
+- Load the CSV
+- Clean and transform using PySpark
+- Convert to Pandas DataFrame
+- Save as `cleaned_food_data.csv`
+
+### 5. Upload Cleaned Data to AWS S3
+
+Configure your AWS credentials in Colab:
+
+```python
 import boto3
 
-# Initialize S3 client
-s3 = boto3.client('s3', aws_access_key_id='YOUR_ACCESS_KEY',
-                        aws_secret_access_key='YOUR_SECRET_KEY')
+s3 = boto3.client(
+    's3',
+    aws_access_key_id="YOUR_ACCESS_KEY",
+    aws_secret_access_key="YOUR_SECRET_KEY"
+)
 
-# Upload the file
-s3.upload_file('cleaned_data.csv', 'your-bucket-name', 'cleaned_data/cleaned_data.csv')
+s3.upload_file("cleaned_food_data.csv", "your-bucket-name", "cleaned_food_data.csv")
+```
 
-print("File uploaded to S3 successfully.")
+### 6. Launch Dashboard with ngrok
+
+```python
+!pip install pyngrok
+from pyngrok import ngrok
+public_url = ngrok.connect(8050)
+print("Dashboard URL:", public_url)
+```
 
 ---
 
-## 🌐 Launch Dashboard using ngrok
+## 📁 Folder Structure
 
-Step 1: Install pyngrok
-bash
-Copy
-Edit
-pip install pyngrok
-Step 2: Run ngrok tunnel
-python
-Copy
-Edit
-from pyngrok import ngrok
+```
+📦 Food-Delivery-Analytics-Dashboard
+├── 📁 colab_notebooks
+│   └── ETL_and_Dashboard.ipynb
+├── 📁 data
+│   ├── raw
+│   └── processed
+├── 📁 dashboard
+│   └── app.py
+├── README.md
+└── requirements.txt
+```
 
-# Open tunnel on port 8050 (Dash default)
-public_url = ngrok.connect(8050)
-print(f"Public URL: {public_url}")
-Step 3: Run your Dash app in another terminal
-bash
-Copy
-Edit
-python app.py
+---
+
+## 📸 Screenshots
+
+> *(Add screenshots of your dashboard here)*  
+> ![dashboard-screenshot](assets/dashboard-example.png)
+
+---
+
+## 🧑‍💼 Author
+
+**Upen**  
+Data Engineering Enthusiast  
+[LinkedIn](https://www.linkedin.com/in/your-profile) | [GitHub](https://github.com/upen122)
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+## 💡 Future Enhancements
+
+- Add user login & authentication  
+- Deploy permanently on EC2 or Render  
+- Integrate real-time Kafka stream  
+- Add dashboard filters and charts by cuisine, location, etc.
+
+---
+
+Feel free to ⭐ this repo if it helped you!
+

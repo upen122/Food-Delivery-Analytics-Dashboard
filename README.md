@@ -1,53 +1,85 @@
-# 🚚 Food Delivery Analytics Dashboard – Big Data Pipeline Project
+<!-- Project Banner -->
+<p align="center">
+  <img src="https://img.shields.io/badge/Big%20Data-PySpark-orange?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Cloud-AWS_S3-yellow?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Dashboard-Plotly_Dash-blue?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge" />
+</p>
 
-![PySpark](https://img.shields.io/badge/PySpark-BigData-blue)
-![AWS](https://img.shields.io/badge/AWS-S3-orange)
-![Dash](https://img.shields.io/badge/Dashboard-Plotly-green)
-![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
+<h1 align="center">📊 Food Delivery Analytics Dashboard</h1>
 
-## 📌 Overview
-
-This project presents a **Big Data Pipeline** designed to analyze food delivery data using **PySpark**, store clean datasets on **AWS S3**, and visualize insights through an **interactive dashboard** built with **Dash (Plotly)**.
-
-The pipeline processes real-world delivery data with multiple features like weather, traffic, delivery time, and rider performance, offering meaningful analytics for decision-making.
-
----
-
-## 📁 Dataset
-
-- Source: [Kaggle - Delivery Dataset](https://www.kaggle.com/)
-- Fields include:
-  - Delivery Person Age & Ratings
-  - Restaurant & Delivery Coordinates
-  - Traffic & Weather Conditions
-  - Festival Impact
-  - Time taken for delivery
-  - Multiple deliveries, Vehicle condition, City, and more
+<p align="center">
+  <em>A Big Data pipeline project that extracts, transforms, and visualizes real-world food delivery metrics using PySpark, AWS, and Dash.</em>
+</p>
 
 ---
 
-## ⚙️ Technologies Used
+## 📚 Table of Contents
 
-| Layer | Tech Stack |
-|-------|------------|
-| Data Processing | `PySpark` on `Google Colab` |
-| Cloud Storage | `AWS S3` |
-| Visualization | `Dash` + `Plotly` |
-| Programming | `Python` |
-| Version Control | `Git` + `GitHub` |
-
----
-
-## 🛠️ Key Features
-
-- ✅ **Big Data Handling** using PySpark
-- ✅ **Data Cleaning & Transformation** (nulls, dtypes, outliers)
-- ✅ **Upload Cleaned Data to AWS S3**
-- ✅ **Interactive Dashboard** to explore:
-  - Delivery Time vs Ratings
-  - Traffic and Weather Conditions
-  - Festival Impacts
-  - Rider and City-based Analytics
+- [🔍 Project Overview](#-project-overview)
+- [📁 Dataset Information](#-dataset-information)
+- [🧰 Tech Stack](#-tech-stack)
+- [✨ Features](#-features)
+- [📌 Pipeline Architecture](#-pipeline-architecture)
+- [🚀 How to Run](#-how-to-run)
+- [📸 Dashboard Preview](#-dashboard-preview)
+- [🧠 What I Learned](#-what-i-learned)
+- [🔗 Connect with Me](#-connect-with-me)
 
 ---
 
+## 🔍 Project Overview
+
+This project builds a complete **end-to-end Data Engineering & Visualization pipeline** using a real-world food delivery dataset. It leverages **PySpark** for scalable processing, stores cleaned data on **AWS S3**, and builds a **dynamic interactive dashboard** using **Plotly Dash**.
+
+🎯 **Goal:** Derive operational insights to improve delivery performance, analyze delivery times, and understand the impact of weather, traffic, and festivals on customer experience.
+
+---
+
+## 📁 Dataset Information
+
+- 📦 Source: Kaggle Food Delivery Dataset  
+- 🎯 Contains attributes like:
+  - Delivery ratings, time, weather, traffic conditions
+  - Rider details (age, experience, vehicle condition)
+  - Festival and multi-order indicators
+  - City zones, restaurant, and delivery locations
+
+---
+
+## 🧰 Tech Stack
+
+| Layer               | Technology             |
+|--------------------|------------------------|
+| Language           | Python 3.x             |
+| Big Data Processing| PySpark (Google Colab) |
+| Cloud Storage      | AWS S3 (via `boto3`)   |
+| Visualization      | Plotly Dash            |
+| Notebook           | Jupyter (Colab)        |
+| Version Control    | Git + GitHub           |
+
+---
+
+## ✨ Features
+
+- ✅ **ETL Pipeline** using PySpark DataFrames
+- ✅ **Null & Duplicate Handling**, Data Cleaning, Type Casting
+- ✅ **AWS S3 Integration** for cloud storage of cleaned data
+- ✅ **Real-Time Dashboard** with interactive graphs
+- ✅ **Insights on**:
+  - Impact of Weather/Traffic
+  - Festival-time Delivery Trends
+  - Rider Ratings vs Delivery Timings
+  - Multi-order Effects
+
+---
+
+## 📌 Pipeline Architecture
+
+```mermaid
+flowchart TD
+    A[Raw Dataset (CSV)] --> B[PySpark ETL - Google Colab]
+    B --> C[Cleaned DataFrame]
+    C --> D[Upload to AWS S3]
+    C --> E[Plotly Dash Dashboard]
+    D --> F[Analytics via Cloud Data]

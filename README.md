@@ -152,8 +152,6 @@ print("Dashboard URL:", public_url)
 
 **Upen**  
 Data Engineering Enthusiast  
-## Connect with me
-[LinkedIn](https://www.linkedin.com/in/upensingh/)
 ---
 
 ## 📄 License

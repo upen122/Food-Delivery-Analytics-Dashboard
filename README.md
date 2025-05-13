@@ -152,7 +152,7 @@ print("Dashboard URL:", public_url)
 
 **Upen**  
 Data Engineering Enthusiast  
-[LinkedIn](https://www.linkedin.com/me?trk=p_mwlite_feed-secondary_nav) | [GitHub](https://github.com/upen122)
+[LinkedIn](https://www.linkedin.com/me?) | [GitHub](https://github.com/upen122)
 
 ---
 

@@ -152,7 +152,9 @@ print("Dashboard URL:", public_url)
 
 **Upen**  
 Data Engineering Enthusiast  
-[LinkedIn](https://www.linkedin.com/me?) | [GitHub](https://github.com/upen122)
+## Connect with me
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue?logo=linkedin&style=for-the-badge)](https://www.linkedin.com/in/upen singh/) | [GitHub](https://github.com/upen122)
 
 ---
 
